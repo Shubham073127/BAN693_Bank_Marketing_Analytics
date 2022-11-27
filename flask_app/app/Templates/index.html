@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<meta name='Viewport' content='width=device-width, initial-scale=1.0'>
+<title>BANK CUSTOMER PREDICTION</title>
+</head>
+ <br>
+ <br>
+ <body>
+<h3> BANK CUSTOMER PREDICTION APP</h3>
+<br>
+<form action="/predict" method='post'>
+    <div class="row">
+    <div class="col-md-3">
+    <div class="form-group">
+        <label for="formGroupExampleInput"> Enter Age</label>
+        <input type="number" name = 'age' class="form-control">
+    </div>
+    </div>
+    <br>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="formGroupExampleInput"> Enter job details [0-housemaid,1-services, 2-admin,3:blue-collar,4:technician, 5: retired, 6: management , 7: unemployed, 8: self-employed, 9: unknown,10: entrepreneur,11: student]</label>
+            <input type="number" name="job" class="form-control">
+        </div>
+    </div>
+    <br>
+</div>
+</div>
+<br>
+<div class="col-md-3">
+    <div class="form-group">
+        <label for="formGroupExampleInput"> Enter Marital status [0-Marital_Dummy,1-divorced, 2-married,3:single]</label>
+        <input type="number" name="marital" class="form-control">
+    </div>
+</div>
+<br>
+    <div class ='col-md-3'>
+        <div class="form-group">
+            <label for="formGroupExampleInput"> Enter education details [ 0-basic.4y,1-high-school,2-basic.6y,3-basic.9y,4-professional.course,5-education-dummy,6-university degree,7-illiterate]</label>
+            <input type="number" name="education" class="form-control">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="formGroupExampleInput"> Select Previous campaign outcome[type 1 for success 0 for failure 2 for nonexistant]</label>
+            <input type="number" name="previous_campaign_outcome" class="form-control">
+        </div>
+    </div>
+    <br>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="formGroupExampleInput"> select model</label>
+            <select name="Model_choice" class="form-control">
+                <option value="neural_reg2"> Neural networks</option>
+            </select>
+        </div>
+    </div>
+    </div>
+    <br>
+    <div>
+        <button type="submit" class="btn-btn-success"> Predict</button>
+        <button type="button" onclick="reset()">Reset</button>
+    </div>
+</form>
+<script>
+    function reset(){
+        document.getElementByID('myform').reset();
+    }
+</script>
+<table class='table' style="width:75%">
+    <thead>
+        <tr>
+            <th scope='col'>Result</th>
+            <br>
+            <th scope='col'>Model Accuracy</th>
+            <br>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> A person with age {{ age}} and education as {{education}} and job as {{job}} has {{prediction}} chance of subscribing to term deposit</td>
+    <br>
+        </tr>
+    </tbody>
+    </table>
+    </body>
+    </div>
+<style>
+    body{
+         background-color: rgb(173, 191, 79);
+         font-family:Shanti
+    }
+    button{
+        border:None;
+    }
+    </style>
+
+
+ </body>
+</html>
